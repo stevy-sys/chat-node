@@ -1,46 +1,54 @@
 const express = require("express");
-const {sequelize} = require('./models')
+require("dotenv").config({ path: "./config/.env" });
+const {sequelize ,Conversation,Membre,Message,User} = require('./models')
 // const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-// const userRoutes = require("./routes/user.routes");
-// const postRoutes = require("./routes/post.routes");
-require("dotenv").config({ path: "./config/.env" });
+const userRoutes = require("./routes/user.routes");
+const authRoutes = require("./routes/auth.routes");
+const chatRoutes = require("./routes/chat.routes");
 // require("./config/db");
-// const { checkUser, requireAuth } = require("./middleware/auth.middleware");
+const { checkUser, requireAuth } = require("./middleware/auth.middleware");
 const cors = require("cors");
 
 const app = express();
 
 const corsOptions = {
-  origin: "*",
+  origin: ["http://localhost:5173"],
   credentials: true,
   allowedHeaders: ["sessionId", "Content-Type"],
   exposedHeaders: ["sessionId"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   preflightContinue: false,
 };
+app.use(express.json());
 app.use(cors(corsOptions));
 
-app.use(express.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // jwt
-// app.get("*", checkUser); // pour tout route
+app.use("*", checkUser); // pour tout route
 // app.get("/jwtid", requireAuth, (req, res) => {
 //   res.status(200).send(res.locals.user._id);
+// })
+
+
+
+// app.post("/all-conversation", async (req, res) => {
+//     res.status(200).send({data});
 // });
 
-app.get("/test", (req, res) => {
-  res.status(200).send({coucou:'hello world'});
-});
+// app.post("/verif-conversation", async (req, res) => {
+//     res.status(200).send({data});
+// });
 
 // routes
-// app.use("/api/user", userRoutes);
-// app.use("/api/post", postRoutes);
+app.use("/api/user",requireAuth, userRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/chat",requireAuth, chatRoutes);
 
 // server
 app.listen(process.env.PORT, async () => {
-    await sequelize.sync({force:true})
+    await sequelize.sync({force:false})
     console.log(`Listening on port ${process.env.PORT}`);
 });
