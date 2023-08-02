@@ -3,11 +3,11 @@ const express = require("express");
 // const { sequelize } = require('./models')
 // const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const userRoutes = require("./routes/user.routes");
-const authRoutes = require("./routes/auth.routes");
-const chatRoutes = require("./routes/chat.routes");
+// const userRoutes = require("./routes/user.routes");
+// const authRoutes = require("./routes/auth.routes");
+// const chatRoutes = require("./routes/chat.routes");
 // require("./config/db");
-const { checkUser, requireAuth } = require("./middleware/auth.middleware");
+// const { checkUser, requireAuth } = require("./middleware/auth.middleware");
 const cors = require("cors");
 
 const app = express();
@@ -48,9 +48,9 @@ app.get("/test", async (req, res) => {
 // });
 
 // routes
-app.use("/api/user", requireAuth, userRoutes);
-app.use("/api/auth", authRoutes);
-app.use("/api/chat", requireAuth, chatRoutes);
+// app.use("/api/user", requireAuth, userRoutes);
+// app.use("/api/auth", authRoutes);
+// app.use("/api/chat", requireAuth, chatRoutes);
 
 // server
 app.listen(5000, () => {
