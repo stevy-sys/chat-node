@@ -6,28 +6,34 @@ const userRoutes = require("./routes/user.routes");
 const authRoutes = require("./routes/auth.routes");
 const chatRoutes = require("./routes/chat.routes");
 const { checkUser, requireAuth } = require("./middleware/auth.middleware");
-const cors = require("cors");
+// const cors = require("cors");
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const corsOptions = {
-  origin: [
-    "http://localhost:5173",
-    "https://chat-vue-nine.vercel.app",
-    "https://chat-vue-git-main-stevy-sys.vercel.app",
-    "https://chat-8j9dtnxki-stevy-sys.vercel.app"
-  ],
-  // origin:["*"],
-  // credentials: true,
-  // allowedHeaders: ["sessionId", "Content-Type"],
-  // exposedHeaders: ["sessionId"],
-  // methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  // preflightContinue: false,
-  // maxAge: 3600
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: [
+//     "http://localhost:5173",
+//     "https://chat-vue-nine.vercel.app",
+//     "https://chat-vue-git-main-stevy-sys.vercel.app",
+//     "https://chat-8j9dtnxki-stevy-sys.vercel.app"
+//   ],
+//   // origin:["*"],
+//   // credentials: true,
+//   // allowedHeaders: ["sessionId", "Content-Type"],
+//   // exposedHeaders: ["sessionId"],
+//   // methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   // preflightContinue: false,
+//   // maxAge: 3600
+// };
+// app.use(cors(corsOptions));
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*"); // Vous pouvez remplacer "*" par les origines autorisées si vous voulez limiter l'accès à certaines origines.
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS"); // Spécifiez les méthodes HTTP que vous voulez autoriser ici.
+  next();
+});
 
 app.use(cookieParser());
 
