@@ -3,7 +3,6 @@ const { User } = require("../models/");
 
 module.exports.checkUser = async (req, res, next) => {
   const token = await req.cookies.jwt;
-  console.log(token,JSON.stringify(token));
   if (token) {
     jwt.verify(token, process.env.TOKEN_SECRET, async (err, decodedToken) => {
       if (err) {
