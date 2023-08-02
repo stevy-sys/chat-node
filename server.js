@@ -22,12 +22,12 @@ const corsOptions = {
     "https://chat-8j9dtnxki-stevy-sys.vercel.app/"
   ],
   // origin:["*"],
-  credentials: true,
-  allowedHeaders: ["sessionId", "Content-Type"],
-  exposedHeaders: ["sessionId"],
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  preflightContinue: false,
-  maxAge: 3600
+  // credentials: true,
+  // allowedHeaders: ["sessionId", "Content-Type"],
+  // exposedHeaders: ["sessionId"],
+  // methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  // preflightContinue: false,
+  // maxAge: 3600
 };
 app.use(cors(corsOptions));
 
