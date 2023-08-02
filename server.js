@@ -1,6 +1,6 @@
 const express = require("express");
 require("dotenv").config({ path: "./config/.env" });
-const { sequelize } = require('./models')
+// const { sequelize } = require('./models')
 // const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/user.routes");
@@ -32,7 +32,7 @@ app.use(cors(corsOptions));
 app.use(cookieParser());
 
 // jwt
-app.use("*", checkUser); // pour tout route
+// app.use("*", checkUser); // pour tout route
 // app.get("/jwtid", requireAuth, (req, res) => {
 //   res.status(200).send(res.locals.user._id);
 // })
@@ -53,7 +53,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/chat", requireAuth, chatRoutes);
 
 // server
-app.listen(process.env.PORT, async () => {
-  await sequelize.sync({ force: false })
+app.listen(process.env.PORT || 5000, async () => {
+  // await sequelize.sync({ force: false })
   console.log(`Listening on port ${process.env.PORT}`);
 });
