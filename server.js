@@ -14,12 +14,13 @@ const app = express();
 app.use(express.json());
 
 const corsOptions = {
-  origin: [
-    "http://localhost:5173",
-    "https://chat-vue-nine.vercel.app",
-    "https://chat-vue-git-main-stevy-sys.vercel.app",
-    "https://chat-8j9dtnxki-stevy-sys.vercel.app"
-  ],
+  // origin: [
+  //   "http://localhost:5173",
+  //   "https://chat-vue-nine.vercel.app",
+  //   "https://chat-vue-git-main-stevy-sys.vercel.app",
+  //   "https://chat-8j9dtnxki-stevy-sys.vercel.app"
+  // ],
+  origin:["*"],
   credentials: true,
   allowedHeaders: ["sessionId", "Content-Type"],
   exposedHeaders: ["sessionId"],
@@ -41,6 +42,9 @@ app.use(cookieParser());
 
 app.get("/test", async (req, res) => {
   res.status(200).json({ data: "coucou" });
+});
+app.post("/test-post", async (req, res) => {
+  res.status(200).json({ data: "post coucou" });
 });
 
 // app.post("/verif-conversation", async (req, res) => {
