@@ -26,8 +26,9 @@ const corsOptions = {
   exposedHeaders: ["sessionId"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   preflightContinue: false,
+  maxAge: 3600
 };
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -53,7 +54,7 @@ app.post("/test-post", async (req, res) => {
 
 // routes
 app.use("/api/user", requireAuth, userRoutes);
-app.use("/api/auth",cors(corsOptions), authRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/chat", requireAuth, chatRoutes);
 
 // server
