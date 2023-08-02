@@ -16,9 +16,9 @@ app.use(express.json());
 const corsOptions = {
   origin: [
     "http://localhost:5173",
-    "http://chat-vue-nine.vercel.app",
-    "http://chat-vue-git-main-stevy-sys.vercel.app",
-    "http://chat-8j9dtnxki-stevy-sys.vercel.app"
+    "https://chat-vue-nine.vercel.app/",
+    "https://chat-vue-git-main-stevy-sys.vercel.app/",
+    "https://chat-8j9dtnxki-stevy-sys.vercel.app/"
   ],
   // origin:["*"],
   credentials: true,
