@@ -1,5 +1,5 @@
 const express = require("express");
-require("dotenv").config({ path: "./config/.env" });
+// require("dotenv").config({ path: "./config/.env" });
 // const { sequelize } = require('./models')
 // const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
@@ -53,7 +53,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/chat", requireAuth, chatRoutes);
 
 // server
-app.listen(process.env.PORT || 5000, async () => {
+app.listen(5000, () => {
   // await sequelize.sync({ force: false })
-  console.log(`Listening on port ${process.env.PORT}`);
+  console.log(`Listening on port ${5000}`);
 });
