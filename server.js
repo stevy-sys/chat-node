@@ -34,9 +34,9 @@ app.use("*", checkUser); // pour tout route
 
 
 
-// app.post("/all-conversation", async (req, res) => {
-//     res.status(200).send({data});
-// });
+app.get("/test", async (req, res) => {
+    res.status(200).json({data:"coucou"});
+});
 
 // app.post("/verif-conversation", async (req, res) => {
 //     res.status(200).send({data});
@@ -48,7 +48,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/chat",requireAuth, chatRoutes);
 
 // server
-app.listen(process.env.PORT, async () => {
+app.listen(process.env.PORT,async () => {
     await sequelize.sync({force:false})
     console.log(`Listening on port ${process.env.PORT}`);
 });
