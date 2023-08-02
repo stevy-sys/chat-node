@@ -1,0 +1,54 @@
+Arguments: 
+  /opt/alt/alt-nodejs18/root/usr/bin/node /home/ylmd4664/.yarn/bin/yarn.js
+
+PATH: 
+  /home/ylmd4664/nodevenv/dev.rubycorp.fr/18/bin:/opt/alt/alt-nodejs18/root/usr/bin:/home/ylmd4664/nodevenv/dev.rubycorp.fr/18/lib/bin/:/home/ylmd4664/.yarn/bin:/home/ylmd4664/.config/yarn/global/node_modules/.bin:/usr/local/cpanel/3rdparty/lib/path-bin:/usr/local/cpanel/3rdparty/lib/path-bin:/usr/local/cpanel/3rdparty/lib/path-bin:/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin:/opt/cpanel/composer/bin:/home/ylmd4664/.local/bin:/home/ylmd4664/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.16.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: unable to get local issuer certificate
+      at TLSSocket.onConnectSecure (node:_tls_wrap:1540:34)
+      at TLSSocket.emit (node:events:513:28)
+      at TLSSocket._finishInit (node:_tls_wrap:959:8)
+      at ssl.onhandshakedone (node:_tls_wrap:743:12)
+
+npm manifest: 
+  {
+    "name": "sequelize",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "start": "nodemon server"
+    },
+    "dependencies": {
+      "bcryptjs": "^2.4.3",
+      "body-parser": "^1.20.2",
+      "cookie-parser": "^1.4.6",
+      "cors": "^2.8.5",
+      "dotenv": "^8.6.0",
+      "express": "^4.18.2",
+      "express-fileupload": "^1.4.0",
+      "jsonwebtoken": "^8.5.1",
+      "multer": "^2.0.0-rc.4",
+      "mysql2": "^3.5.2",
+      "nodemon": "^2.0.22",
+      "sequelize": "^6.32.1",
+      "sequelize-cli": "^6.6.1",
+      "validator": "^13.9.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -14,9 +14,9 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "chat-sequelize",
+    "username": "ylmd4664_root",
+    "password": "SafidyTsihoaranaStevy1234",
+    "database": "ylmd4664_chat-api",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

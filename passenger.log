@@ -1,0 +1,11 @@
+App 26894 output: [Object: null prototype] {}
+App 26894 output: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'conversations' AND TABLE_SCHEMA = 'ylmd4664_chat-api'
+App 26894 output: Executing (default): SHOW INDEX FROM `conversations` FROM `ylmd4664_chat-api`
+App 26894 output: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Users' AND TABLE_SCHEMA = 'ylmd4664_chat-api'
+App 26894 output: Executing (default): SHOW INDEX FROM `Users` FROM `ylmd4664_chat-api`
+App 26894 output: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'membres' AND TABLE_SCHEMA = 'ylmd4664_chat-api'
+App 26894 output: Executing (default): SHOW INDEX FROM `membres` FROM `ylmd4664_chat-api`
+App 26894 output: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'messages' AND TABLE_SCHEMA = 'ylmd4664_chat-api'
+App 26894 output: Executing (default): SHOW INDEX FROM `messages` FROM `ylmd4664_chat-api`
+App 26894 output: Listening on port 5000
+App 26894 output: [Object: null prototype] {}

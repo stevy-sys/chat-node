@@ -1,0 +1,8 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/ylmd4664/dev.rubycorp.fr"
+PassengerBaseURI "/"
+PassengerNodejs "/home/ylmd4664/nodevenv/dev.rubycorp.fr/18/bin/node"
+PassengerAppType node
+PassengerStartupFile server.js
+PassengerAppLogFile "/home/ylmd4664/dev.rubycorp.fr/passenger.log"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
